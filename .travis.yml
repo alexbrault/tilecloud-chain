@@ -27,9 +27,7 @@ before_install:
 
 - sudo rm -f /etc/apt/sources.list.d/pgdg-source.list
 - sudo rm -rf /usr/local
-- echo 'yes' | sudo add-apt-repository ppa:stephane-brunner/precise
-- echo 'yes' | sudo add-apt-repository ppa:mapnik/v2.2.0
-- echo 'yes' | sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+- echo 'yes' | sudo add-apt-repository ppa:stephane-brunner/trusty-gis
 - sudo apt-get update
 - sudo apt-get install -y --force-yes libstdc++-4.9-dev libc6 libmapnik-dev apache2 cgi-mapserver deploy libdb-dev optipng postgresql-9.3-postgis-2.1
 
