@@ -43,6 +43,9 @@ before_install:
 - sudo -u www-data ls -als /usr/lib/cgi-bin/mapserv
 - sudo -u www-data ls -als /home/travis/build/sbrunner/tilecloud-chain/tilecloud_chain/tests/mapfile/mapfile.map
 - curl http://localhost/mapserv
+- cat /var/log/apache2/error.log
+- cat /var/log/apache2/access.log
+- cat /var/log/apache2/*.log
 - false
 
 - sudo tilecloud_chain/tests/create-deploy.sh
