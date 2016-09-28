@@ -32,9 +32,10 @@ before_install:
 - sudo rm -rf /usr/local
 - echo 'yes' | sudo add-apt-repository ppa:stephane-brunner/trusty-gis
 - sudo apt-get update
-- sudo apt-get install -y --force-yes libstdc++-4.8-dev libc6 libmapnik-dev apache2 cgi-mapserver deploy libdb-dev optipng postgresql-9.3-postgis-2.1
+- sudo apt-get install -y --force-yes libstdc++-4.8-dev libc6 libmapnik-dev libapache2-mod-fcgid cgi-mapserver deploy libdb-dev optipng postgresql-9.3-postgis-2.1
 
 - sudo -u postgres tilecloud_chain/tests/create_test_data.sh
+- sudo a2enmod fcgid
 - sudo cp tilecloud_chain/tests/apache.conf /etc/apache2/sites-enabled/apache.conf
 - sudo apache2ctl graceful
 
