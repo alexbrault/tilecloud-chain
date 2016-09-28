@@ -15,8 +15,6 @@ env:
 
 before_install:
 - chmod o+rx /home/travis
-- ls -als /usr/lib/cgi-bin/mapserv
-- ls -als /home/travis/build/sbrunner/tilecloud-chain/tilecloud_chain/tests/mapfile/mapfile.map
 
 
 - sudo sed -i '/plugin_directory/d' /etc/boto.cfg
@@ -40,6 +38,8 @@ before_install:
 - sudo cp tilecloud_chain/tests/apache.conf /etc/apache2/sites-enabled/apache.conf
 - sudo apache2ctl graceful
 
+- ls -als /usr/lib/cgi-bin/mapserv
+- ls -als /home/travis/build/sbrunner/tilecloud-chain/tilecloud_chain/tests/mapfile/mapfile.map
 - sudo -u www-data ls -als /usr/lib/cgi-bin/mapserv
 - sudo -u www-data ls -als /home/travis/build/sbrunner/tilecloud-chain/tilecloud_chain/tests/mapfile/mapfile.map
 - curl http://localhost/mapserv
